@@ -97,7 +97,7 @@ boot(void)
 	 */
 
 	kprintf("\n");
-	kprintf("OS/161 base system version %s\n", BASE_VERSION);
+	kprintf("OS/161 NINJA  %s\n", BASE_VERSION);
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
 
