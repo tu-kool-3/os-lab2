@@ -50,7 +50,7 @@
 #include <test.h>
 #include <version.h>
 #include "autoconf.h"  // for pseudoconfig
-
+#include "opt-A0.h"
 
 /*
  * These two pieces of data are maintained by the makefiles and build system.
@@ -100,12 +100,16 @@ boot(void)
 	kprintf("OS/161 NINJA  %s\n", BASE_VERSION);
 	kprintf("%s", harvard_copyright);
 	kprintf("\n");
+#if OPT_A0
+	hello();
+#endif /*OPT-A0*/
 
-	kprintf("Put-your-group-name-here's system version %s (%s #%d)\n", 
+	kprintf("waylon's ninja system version 1 %s (%s #%d)\n", 
 		GROUP_VERSION, buildconfig, buildversion);
 	kprintf("\n");
 
 	/* Early initialization. */
+
 	ram_bootstrap();
 	proc_bootstrap();
 	thread_bootstrap();
